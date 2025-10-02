@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Navber = () => {
+
+ const { user, logOut} = use(AuthContext);
+
+ const handlysignOut = () =>{
+  logOut()
+  .then(()=>{
+    console.log("user signOut")
+  })
+  .catch(error =>{
+    console.log(error.user)
+  })
+ }
 
     const links = <>
 
@@ -29,8 +42,13 @@ const Navber = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-2">
-    <NavLink to='signIn' className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600 hover:bg-blue-500 text-gray-50'>Sign In</NavLink>
+    {
+      user ? <button onClick={handlysignOut} className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600 hover:bg-blue-500 text-gray-50'>Sign Out</button> :
+      <>
+          <NavLink to='signIn' className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600 hover:bg-blue-500 text-gray-50'>Sign In</NavLink>
      <NavLink to='signUp' className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600  hover:bg-blue-500 text-gray-50' >Register</NavLink>
+      </>
+    }
   </div>
 </div>
     );

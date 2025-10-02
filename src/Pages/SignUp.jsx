@@ -1,9 +1,12 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 
 const SignUp = () => {
+
+    const {createUser} = use(AuthContext);
 
     const handleSignUp = e => {
         e.preventDefault();
@@ -13,6 +16,17 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(photo, name, email,password,);
+
+//crate user
+
+createUser(email, password)
+.then(result =>{
+console.log(result.user)
+})
+.catch(error =>{
+    console.log(error.user)
+})
+
 
     }
     return (
