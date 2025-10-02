@@ -1,6 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Navber = () => {
+
+    const links = <>
+
+<li><NavLink to="/">Home</NavLink></li>
+    </>
     return (
        <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -11,36 +17,20 @@ const Navber = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+                   {links}          
       </ul>
     </div>
     <a className="btn btn-ghost text-xl">daisyUI</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+                {links}
+     
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end flex gap-2">
+    <NavLink to='signIn' className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600 hover:bg-blue-500 text-gray-50'>Sign In</NavLink>
+     <NavLink to='signUp' className='btn px-8 py-3 font-semibold rounded-md  bg-blue-600  hover:bg-blue-500 text-gray-50' >Register</NavLink>
   </div>
 </div>
     );
