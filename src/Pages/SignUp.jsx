@@ -1,15 +1,33 @@
+import Lottie from 'lottie-react';
 import React from 'react';
 import { NavLink } from 'react-router';
 
+
 const SignUp = () => {
+
+    const handleSignUp = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(photo, name, email,password,);
+
+    }
     return (
-        <div className='my-20 max-h-screen flex justify-center  '>
-<div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50  text-gray-800">
-	<div className="mb-8 text-center">
+        <div className='my-20  flex justify-center  '>
+
+        <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-50  text-gray-800">
+	    <div className="mb-8 text-center">
 		<h1 className="my-3 text-4xl font-bold">Sign Up</h1>
 		<p className="text-sm  text-gray-600">Sign Up to access your account</p>
-	</div>
-	<form noValidate="" action="" className="space-y-12">
+	    </div>
+
+
+
+
+        <form  onSubmit={handleSignUp} noValidate="" action="" className="space-y-12">
 		<div className="space-y-4">
 			<div>
 				<label htmlFor="Name" className="block mb-2 text-sm">Name</label>
@@ -28,27 +46,27 @@ const SignUp = () => {
 
             <div>
 				<label htmlFor="email" className="block mb-2 text-sm">Password</label>
-				<input type="text" name="Password" id="Password" placeholder="******" className="w-full px-3 py-2 border rounded-md  border-gray-300  bg-gray-50  text-gray-800" />
+				<input type="password" name="password" id="password" placeholder="******"  className="w-full px-3 py-2 border rounded-md  border-gray-300  bg-gray-50  text-gray-800" />
 			</div>
 
-            
-
-
-
-				
-			
-		</div>
+            </div>
 		<div className="space-y-2">
 			<div>
-				<button type="button" className="w-full px-8 py-3 font-semibold rounded-md  bg-blue-600  hover:bg-blue-500 text-gray-50">Sign Up</button>
+				<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md  bg-blue-600  hover:bg-blue-500 text-gray-50">Sign Up</button>
 			</div>
 			<p className="px-6 text-sm text-center  text-gray-600">Already have a account ?
 				<NavLink to="/signIn" rel="noopener noreferrer" href="#" className="hover:underline  text-blue-600">Sign In</NavLink>.
 			</p>
 		</div>
 	</form>
+
+    <div>
+        
+    </div>
+
+    </div>
 </div>
-        </div>
+
     );
 };
 
