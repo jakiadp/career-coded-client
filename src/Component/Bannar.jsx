@@ -8,7 +8,7 @@ import bannarImage2 from '../assets/Bannar/bannat-image2.jpg';
 const Bannar = () => {
     return (
         <div>
-            <div className="hero bg-base-100 min-h-screen">
+            <div className="hero bg-base-100 min-h-96">
   <div className="hero-content flex flex-col lg:flex-row-reverse justify-around gap-20">
     
 <div className="flex-1">
