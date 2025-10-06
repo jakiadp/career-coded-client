@@ -11,10 +11,10 @@ const Card = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl font-bold tracking-tight text-balance lg:text-6xl xl:text-7xl">
-                <span className="text-muted-foreground text-3xl text-blue-350">Millions Of Jobs.</span>
+              <h1 className="text-3xl font-bold tracking-tight text-balance lg:text-4xl xl:text-5xl">
+                <span className="text-xl lg:text-2xl text-blue-350">Millions Of Jobs.</span>
                 <br />
-                Find The One That's <span className="text-primary">Right</span> For You
+                Find The One That's <span className="text-blue-600">Right</span> For You
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed lg:text-xl">
                 Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on

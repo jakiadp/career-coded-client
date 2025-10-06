@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Bannar from '../Component/Bannar';
 import HotJob from '../Component/HotJob';
 import MillionJobs from '../Component/MillionJobs';
 import Card from '../Component/Card';
 import Counte from '../Component/Counte';
+import EveryCard from '../Component/EveryCard';
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -26,18 +27,22 @@ const Home = () => {
     <div className="space-y-8">
       <Bannar />
 
-      {loading ? (
+     <Suspense>
+       {loading ? (
         <p className="text-center text-gray-500 text-xl">⏳ Loading hot jobs...</p>
       ) : (
         <HotJob jobs={jobs} />
       )}
+     </Suspense>
 
-      
+      <Card></Card>
+      <Counte></Counte>
 
-       <Card></Card>
-       <Counte></Counte>
       <MillionJobs></MillionJobs>
+      <EveryCard></EveryCard>
       
+      
+
       
     </div>
   );

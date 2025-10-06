@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
+import imglogo from '/src/assets/Image/logo.jpg';
 
 const Navber = () => {
 
@@ -33,7 +34,13 @@ const Navber = () => {
                    {links}          
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">JobPortal</a>
+
+    {/*  */}
+   <div className='flex '>
+    <img src={imglogo} className="h-10 w-auto" alt="logo" />
+     <a className="btn btn-ghost text-2xl font-bold" >JobPortal</a>
+   </div>
+
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -12,7 +12,7 @@ const JobCard = ({ job }) => {
   } = job;
 
   return (
-    <div className="card bg-white shadow-md rounded-md p-4 w-full max-w-md mx-auto">
+    <div className="card bg-white shadow-md rounded-md p-4 w-full max-w-md mx-auto hover:shadow-2xl hover:bg-base-300">
       <div className="mb-4">
         <img
           src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
