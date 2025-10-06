@@ -3,6 +3,7 @@ import Bannar from '../Component/Bannar';
 import HotJob from '../Component/HotJob';
 import MillionJobs from '../Component/MillionJobs';
 import Card from '../Component/Card';
+import Counte from '../Component/Counte';
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -31,8 +32,12 @@ const Home = () => {
         <HotJob jobs={jobs} />
       )}
 
+      
+
+       <Card></Card>
+       <Counte></Counte>
       <MillionJobs></MillionJobs>
-      <Card></Card>
+      
       
     </div>
   );
